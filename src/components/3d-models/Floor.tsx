@@ -24,7 +24,7 @@ export default function Floor() {
     if (floor) {
       floor.scale.set(initialScale.x, initialScale.y, initialScale.z) // Set initial scale
     }
-  }, [])
+  })
 
   useFrame((state, delta) => {
     const floor = floorRef.current
