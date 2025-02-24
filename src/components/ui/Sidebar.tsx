@@ -15,6 +15,38 @@ export const Sidebar = () => {
     // setIsDrawerOpen(prev => !prev)
     state.isDrawerOpen = !snap.isDrawerOpen
   }
+  const addFloor = () => {
+    // setIsDrawerOpen(prev => !prev)
+    state.floorAdded = !snap.floorAdded
+  }
+
+  const addChair = () => {
+    // setIsDrawerOpen(prev => !prev)
+    state.chairAdded = !snap.chairAdded
+  }
+
+  const addStage = () => {
+    // setIsDrawerOpen(prev => !prev)
+    state.stageAdded = !snap.stageAdded
+  }
+
+  const addSpeaker = () => {
+    // setIsDrawerOpen(prev => !prev)
+    state.speakerAdded = !snap.speakerAdded
+  }
+
+  const addTable = () => {
+    // setIsDrawerOpen(prev => !prev)
+    state.tableAdded = !snap.tableAdded
+  }
+
+  const EventProps = [
+    { label: 'Add Floor', action: 'addFloor' },
+    { label: 'Add Chair', action: 'addChair' },
+    { label: 'Add Stage', action: 'addStage' },
+    { label: 'Add Speaker', action: 'addSpeaker' },
+    { label: 'Add Table', action: 'addTable' }
+  ]
 
   return (
     <motion.div
@@ -34,9 +66,27 @@ export const Sidebar = () => {
         }} // Slide in or out
         transition={{ type: 'tween', ease: 'easeOut', duration: 0.5 }} // Animation speed and style
       >
-        <div className='flex flex-col items-center justify-center'>
+        <div className='flex flex-col gap-3 items-center justify-center'>
           <h1 className='text-xl font-bold'>Event Name</h1>
           <p className='text-xl'>Event Details Here</p>
+          {/* <button onClick={addFloor}>Add floor</button> */}
+          <div className='grid grid-cols-2 gap-4 w-full'>
+            {EventProps.map(({ label, action }, index) => (
+              <button
+                key={index}
+                className='bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-colors'
+                onClick={() => {
+                  if (action === 'addFloor') addFloor()
+                  if (action === 'addChair') addChair()
+                  if (action === 'addStage') addStage()
+                  if (action === 'addSpeaker') addSpeaker()
+                  if (action === 'addTable') addTable()
+                }}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
         </div>
       </motion.div>
 

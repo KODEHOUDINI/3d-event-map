@@ -1,8 +1,9 @@
 'use client'
 
-import { OrbitControls } from '@react-three/drei'
+import { Environment, OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 
+import Floor from '../3d-models/Floor'
 import EventGizmo from './EventGizmo'
 import EventGrid from './EventGrid'
 
@@ -15,22 +16,21 @@ export default function Experience() {
     >
       <color attach='background' args={['#0a0a6c']} />
       <OrbitControls
+        makeDefault
         autoRotate={true}
-        autoRotateSpeed={-0.1}
-        zoomSpeed={0.25}
+        autoRotateSpeed={0.01}
+        zoomSpeed={0.85}
         minZoom={40}
         maxZoom={140}
-        enablePan={false}
+        // enablePan={false}
         dampingFactor={0.05}
-        minPolarAngle={Math.PI / 3}
-        maxPolarAngle={Math.PI / 3}
+        minPolarAngle={-Math.PI / 2}
+        maxPolarAngle={Math.PI / 2.5}
       />
-      <mesh>
-        <boxGeometry />
-        <meshNormalMaterial />
-      </mesh>
+      <Floor />
       <EventGrid />
       <EventGizmo />
+      <Environment preset='city' />
     </Canvas>
   )
 }
