@@ -3,7 +3,7 @@
 import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 
-import EventGizmo from './EventGizmo'
+// import EventGizmo from './EventGizmo'
 import EventGrid from './EventGrid'
 
 export default function Experience() {
@@ -30,7 +30,7 @@ export default function Experience() {
         <meshNormalMaterial />
       </mesh>
       <EventGrid />
-      <EventGizmo />
+      {/* <EventGizmo /> */}
     </Canvas>
   )
 }
