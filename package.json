@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@react-three/drei": "^10.0.0",
     "@react-three/fiber": "^9.0.4",
     "@tanstack/react-query": "^5.66.9",
     "@types/three": "^0.173.0",
+    "gsap": "^3.12.7",
     "leva": "^0.10.0",
     "maath": "^0.10.8",
     "motion": "^12.4.7",
@@ -28,6 +30,7 @@
     "@eslint/eslintrc": "^3",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@tanstack/eslint-plugin-query": "^5.66.1",
+    "@types/lodash.clamp": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

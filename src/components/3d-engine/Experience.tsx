@@ -3,9 +3,9 @@
 import { Environment, OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 
-import Floor from '../3d-models/Floor'
 import EventGizmo from './EventGizmo'
 import EventGrid from './EventGrid'
+import ModelsHub from './ModelsHub'
 
 export default function Experience() {
   return (
@@ -27,7 +27,7 @@ export default function Experience() {
         minPolarAngle={-Math.PI / 2}
         maxPolarAngle={Math.PI / 2.5}
       />
-      <Floor />
+      <ModelsHub />
       <EventGrid />
       <EventGizmo />
       <Environment preset='city' />
