@@ -20,6 +20,7 @@
 # production
 /build
 /src/components/3d-engine/pivotControls 
+/public/3d-models/Blends
 
 # misc
 .DS_Store

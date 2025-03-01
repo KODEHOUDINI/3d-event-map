@@ -12,8 +12,8 @@ export default function ModelsHub() {
   return (
     <>
       {' '}
-      {snap.floorAdded && <Floor />}
       {/* <Floor /> */}
+      <Floor />
       {snap.chairAdded && <Chair />}
     </>
   )

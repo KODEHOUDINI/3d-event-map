@@ -10,11 +10,8 @@ import { useSnapshot } from 'valtio'
 
 export default function Chair() {
   const { nodes, materials } = useGLTF('/3d-models/Chair.glb')
-
   const snap = useSnapshot(state)
-
   const chairRef = useRef<Mesh>(null)
-
   const chairTl = gsap.timeline()
 
   useGSAP(() => {
