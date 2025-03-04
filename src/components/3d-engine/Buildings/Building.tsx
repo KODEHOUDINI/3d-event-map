@@ -57,10 +57,20 @@ export default function Building({
         {bData.map((transforms, index) => (
           <Instance
             key={index}
+            // onClick={() => {
+            //   console.log(
+            //     `${buildingLabel} with position: ${transforms.position} clicked`
+            //   )
+            // }}
             position={[
               transforms.position[0],
               transforms.position[1],
               transforms.position[2]
+            ]}
+            rotation={[
+              transforms.rotation[0],
+              transforms.rotation[1],
+              transforms.rotation[2]
             ]}
           />
         ))}

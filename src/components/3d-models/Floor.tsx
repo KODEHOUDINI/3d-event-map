@@ -18,13 +18,13 @@ export default function Floor() {
       floorTl.fromTo(
         // Creates the animation
         floorRef.current.scale,
-        { x: 0, y: 0, z: 0 }, // Initial position
+        { x: 0, y: 0, z: 0 },
         {
           x: 500,
           y: 0.01,
-          z: 500, // Final position
-          ease: 'power2.out', // Easing function
-          duration: 0.9 // Duration
+          z: 500, // Final scale
+          ease: 'power2.out', // Easing scale
+          duration: 0.9
         }
       )
     }
