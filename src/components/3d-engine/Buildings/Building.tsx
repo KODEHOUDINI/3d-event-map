@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { Instance, Instances, useGLTF, useTexture } from '@react-three/drei'
+// import { useThree } from '@react-three/fiber'
 import { gsap } from 'gsap'
 import { Mesh, MeshStandardMaterial } from 'three'
 
@@ -11,44 +12,56 @@ type bdataType = {
 
 export default function Building({
   buildingLabel,
-  bData
+  bData,
+  buildingTexture
 }: {
   buildingLabel: string
   bData: bdataType[]
+  buildingTexture: string
 }) {
   const { nodes, materials } = useGLTF(
     `/3d-models/Buildings/${buildingLabel}.glb`
   )
-  const buildingColor = useTexture('/3d-models/BuildingColor.png')
+
+  // const { scene } = useThree()
+  // scene.traverse(children => {
+  //   if (
+  //     children instanceof Mesh &&
+  //     children.material instanceof MeshStandardMaterial
+  //   ) {
+  //     children.material.envMapIntensity = 8.5
+  //     console.log('my Envmap', children.material.colo)
+  //   }
+  // })
+
+  const buildingColor = useTexture(`/3d-models/${buildingTexture}.png`)
   buildingColor.flipY = false
+  // console.log('buildingColor', buildingColor)
   ;(materials.Texture as MeshStandardMaterial).map = buildingColor
 
   const buildingRef = useRef<Mesh>(null)
   const buildingTl = gsap.timeline()
 
   useGSAP(() => {
-    // The new hook will take care of context and life cicle.
     if (buildingRef.current) {
       buildingTl.fromTo(
-        // Creates the animation
         buildingRef.current.scale,
-        { x: 0, y: 0, z: 0 }, // Initial position
+        { x: 0, y: 0, z: 0 },
         {
           x: 1,
           y: 1,
-          z: 1, // Final position
-          ease: 'power2.out', // Easing function
-          duration: 3 // Duration
+          z: 1,
+          ease: 'power2.out',
+          duration: 5
         }
       )
     }
-  }, {}) //Dependencies, if you have
+  }, [])
 
   return (
     <group dispose={null} ref={buildingRef}>
       <Instances
         castShadow
-        receiveShadow
         range={bData.length}
         geometry={(nodes[`${buildingLabel}`] as Mesh).geometry}
         frustumCulled={false}
@@ -56,10 +69,12 @@ export default function Building({
         <meshStandardMaterial map={buildingColor} />
         {bData.map((transforms, index) => (
           <Instance
+            castShadow
             key={index}
             // onClick={() => {
             //   console.log(
-            //     `${buildingLabel} with position: ${transforms.position} clicked`
+            //     // `${buildingLabel} with position: ${transforms.position} clicked`
+            //     `${buildingTexture}`
             //   )
             // }}
             position={[

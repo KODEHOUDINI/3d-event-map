@@ -8,7 +8,7 @@ const EventGrid = () => {
     sectionSize: 4,
     sectionThickness: 1.5,
     sectionColor: '#9d4b4b',
-    followCamera: false,
+    followCamera: true,
     infiniteGrid: true
   }
 

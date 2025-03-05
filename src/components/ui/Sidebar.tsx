@@ -50,11 +50,11 @@ export const Sidebar = () => {
 
   return (
     <motion.div
-      className='flex gap-2 absolute z-10 top-0 left-0 p-3 w-[30%] text-black h-full'
+      className='hidden lg:flex gap-2 absolute z-10 top-0 left-0 p-3 w-[30%] text-black h-full'
       initial={{ x: '-87%' }} // Drawer starts off-screen to the left
       animate={{
         x: snap.isDrawerOpen ? '0%' : '-87%'
-      }} // Slide in or out
+      }}
       transition={{ type: 'tween', ease: 'easeOut', duration: 0.5 }} // Animation speed and style
     >
       {/* Drawer */}

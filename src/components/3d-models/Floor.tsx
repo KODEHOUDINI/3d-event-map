@@ -33,13 +33,14 @@ export default function Floor() {
   return (
     <group dispose={null}>
       <mesh
-        castShadow
         receiveShadow
         // name={'Floor'}
         ref={floorRef}
         geometry={(nodes.Floor as Mesh).geometry}
-        material={materials.FloorMat}
-      />
+        // material={materials.FloorMat}
+      >
+        <meshStandardMaterial color={'#383838'} />
+      </mesh>
     </group>
   )
 }

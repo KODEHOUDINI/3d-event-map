@@ -35,7 +35,7 @@ export const MySpline = ({ position, points }: Curve3Data) => {
         geometry={(nodes.Start_Point as THREE.Mesh).geometry}
         position={startPoint}
       >
-        <meshStandardMaterial color='green' />
+        <meshStandardMaterial color='red' />
       </mesh>
     )
 
@@ -75,7 +75,7 @@ export const MySpline = ({ position, points }: Curve3Data) => {
           geometry={(nodes.Destination as THREE.Mesh).geometry}
           position={endPoint}
         >
-          <meshStandardMaterial color='green' />
+          <meshStandardMaterial color='red' />
         </mesh>
       </Float>
     )

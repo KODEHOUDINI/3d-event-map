@@ -11,7 +11,7 @@ export default function EventGrounds() {
   const { nodes, materials } = useGLTF('/3d-models/Buildings/EventGrounds.glb')
   const { posX, posY, posZ, scale, rotY } = useControls({
     posX: { value: 37.7, min: -10, max: 50, step: 0.0001 },
-    posY: { value: 0, min: -20, max: 20, step: 0.0001 },
+    posY: { value: 0.2, min: -20, max: 20, step: 0.0001 },
     posZ: { value: -4.3, min: -20, max: 20, step: 0.0001 },
     scale: { value: 0.17, min: 0.1, max: 1, step: 0.0001 },
     rotY: {

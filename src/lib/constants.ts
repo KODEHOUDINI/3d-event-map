@@ -149,7 +149,7 @@ export const buildingData = [
 
 // Curve Data
 export const curve1Data = {
-  position: [0, 0.7, -19],
+  position: [0, 0.3, -19],
   points: [
     new Vector3(-31.426156997680664, 0.0, -1.130739688873291),
     new Vector3(-31.053373336791992, 0.0, 7.845229148864746),
@@ -163,7 +163,7 @@ export const curve1Data = {
 }
 
 export const curve2Data = {
-  position: [0, 0.7, -11.36],
+  position: [0, 0.3, -11.36],
   points: [
     new Vector3(-35.17073059082031, 0.0, 7.585031032562256),
     new Vector3(-34.797950744628906, 0.0, 7.585031509399414),
@@ -177,7 +177,7 @@ export const curve2Data = {
 }
 
 export const curve3Data = {
-  position: [5.98, 0.7, 4.63],
+  position: [5.98, 0.3, 4.63],
   points: [
     new Vector3(
       -43.058509826660156,
