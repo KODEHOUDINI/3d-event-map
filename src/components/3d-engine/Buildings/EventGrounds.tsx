@@ -1,6 +1,8 @@
+import { state } from '@/vStore/store'
 import { useGLTF } from '@react-three/drei'
 import { useControls } from 'leva'
 import { Mesh } from 'three'
+import { useSnapshot } from 'valtio'
 
 import BarStools from './BuildingAssets/BarStools'
 import ConferenceChairs from './BuildingAssets/ConferenceChairs'
@@ -8,14 +10,16 @@ import Couch from './BuildingAssets/Couch'
 import VisitorEntranceChair from './BuildingAssets/VisitorEntranceChair'
 
 export default function EventGrounds() {
+  const snap = useSnapshot(state)
+
   const { nodes, materials } = useGLTF('/3d-models/Buildings/EventGrounds.glb')
   const { posX, posY, posZ, scale, rotY } = useControls({
-    posX: { value: 37.7, min: -10, max: 50, step: 0.0001 },
+    posX: { value: 7.3, min: -10, max: 50, step: 0.0001 },
     posY: { value: 0.2, min: -20, max: 20, step: 0.0001 },
-    posZ: { value: -4.3, min: -20, max: 20, step: 0.0001 },
+    posZ: { value: -1.7, min: -20, max: 20, step: 0.0001 },
     scale: { value: 0.17, min: 0.1, max: 1, step: 0.0001 },
     rotY: {
-      value: Math.PI / 2,
+      value: 0,
       min: -Math.PI * 2,
       max: Math.PI * 2,
       step: 0.0001
@@ -25,6 +29,7 @@ export default function EventGrounds() {
   return (
     <group
       dispose={null}
+      visible={snap.showRoom}
       position={[posX, posY, posZ]}
       scale={scale}
       rotation-y={rotY}

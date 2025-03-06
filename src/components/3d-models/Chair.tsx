@@ -1,21 +1,19 @@
 'use client'
 
 import React, { useRef } from 'react'
-import { state } from '@/vStore/store'
 import { useGSAP } from '@gsap/react'
 import { PivotControls, useGLTF } from '@react-three/drei'
 import { gsap } from 'gsap'
 import { Mesh } from 'three'
-import { useSnapshot } from 'valtio'
 
 export default function Chair() {
   const { nodes, materials } = useGLTF('/3d-models/Chair.glb')
-  const snap = useSnapshot(state)
+  // const snap = useSnapshot(state)
   const chairRef = useRef<Mesh>(null)
   const chairTl = gsap.timeline()
 
   useGSAP(() => {
-    if (chairRef.current && snap.chairAdded) {
+    if (chairRef.current) {
       const target = {
         scale: 0,
         rotation: 0

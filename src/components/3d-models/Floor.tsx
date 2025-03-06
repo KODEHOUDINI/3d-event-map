@@ -8,7 +8,7 @@ import { Mesh } from 'three'
 
 export default function Floor() {
   const floorRef = useRef<Mesh>(null)
-  const { nodes, materials } = useGLTF('/3d-models/Floor.glb')
+  const { nodes } = useGLTF('/3d-models/Floor.glb')
 
   const floorTl = gsap.timeline()
 
@@ -39,7 +39,7 @@ export default function Floor() {
         geometry={(nodes.Floor as Mesh).geometry}
         // material={materials.FloorMat}
       >
-        <meshStandardMaterial color={'#383838'} />
+        <meshStandardMaterial color={'#FF9144'} />
       </mesh>
     </group>
   )
