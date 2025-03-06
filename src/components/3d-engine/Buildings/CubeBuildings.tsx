@@ -28,7 +28,7 @@ export default function CubeBuildings({ bData }: { bData: cubeBdataType[] }) {
           // Generate random scale factors between 0.8 and 1.2 for each instance
           const randomScale = [
             Math.random() * (3.2 - 0.8) + 2.8,
-            Math.random() * (3.2 - 0.8) + 2.8,
+            Math.random() * (3.2 - 0.8) + 1.7,
             Math.random() * (2.2 - 0.8) + 2.8
           ]
 

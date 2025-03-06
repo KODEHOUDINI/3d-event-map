@@ -34,7 +34,7 @@ export default function CameraRig() {
       <CameraControls
         ref={camRef}
         makeDefault
-        smoothTime={1.3}
+        smoothTime={1}
         minPolarAngle={Math.PI / 2.8}
         maxPolarAngle={Math.PI / 3}
         polarRotateSpeed={0.5}
