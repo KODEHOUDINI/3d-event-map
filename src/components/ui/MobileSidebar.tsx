@@ -9,7 +9,7 @@ export default function MobileSidebar() {
   }
 
   return (
-    <div className='rounded-lg w-full absolute z-10 bottom-24'>
+    <div className='rounded-lg w-full absolute z-10 bottom-5 select-none'>
       <div className='flex flex-col gap-2 items-center justify-start'>
         {/* <h1 className='text-xl font-bold'>Event Name</h1> */}
         {/* <p className='text-xl'>Current Location Within UG</p> */}

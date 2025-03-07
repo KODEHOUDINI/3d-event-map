@@ -35,15 +35,15 @@ export default function CameraRig() {
         ref={camRef}
         makeDefault
         smoothTime={1}
-        minPolarAngle={Math.PI / 2.8}
-        maxPolarAngle={Math.PI / 3}
+        minPolarAngle={Math.PI / 5}
+        maxPolarAngle={Math.PI / 5}
         polarRotateSpeed={0.5}
         azimuthRotateSpeed={0.5}
-        dollySpeed={0.8}
-        truckSpeed={0.6}
+        dollySpeed={0.1}
+        truckSpeed={1.6}
         minZoom={40}
         maxZoom={140}
-        // dampingFactor={0.5}
+        dampingFactor={0.5}
       />
     </>
   )
